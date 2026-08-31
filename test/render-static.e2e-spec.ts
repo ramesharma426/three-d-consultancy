@@ -10,23 +10,21 @@ describe('renderStatic (e2e)', () => {
     fs.rmSync(outDir, { recursive: true, force: true });
   });
 
-  it('writes static HTML files and copied assets for every route', async () => {
+  it('writes the single-page static site and copied assets', async () => {
     await renderStatic(outDir);
 
     expect(fs.existsSync(path.join(outDir, 'index.html'))).toBe(true);
-    expect(fs.existsSync(path.join(outDir, 'about', 'index.html'))).toBe(true);
-    expect(fs.existsSync(path.join(outDir, 'services', 'index.html'))).toBe(true);
-    expect(fs.existsSync(path.join(outDir, 'portfolio', 'index.html'))).toBe(true);
-    expect(fs.existsSync(path.join(outDir, 'contact', 'index.html'))).toBe(true);
     expect(fs.existsSync(path.join(outDir, 'css', 'style.css'))).toBe(true);
+    expect(fs.existsSync(path.join(outDir, 'js', 'scrollspy.js'))).toBe(true);
     expect(fs.existsSync(path.join(outDir, '.nojekyll'))).toBe(true);
 
     const homeHtml = fs.readFileSync(path.join(outDir, 'index.html'), 'utf-8');
     expect(homeHtml).toContain('3D Engineering Consultancy');
     expect(homeHtml).toContain('href="/three-d-consultancy/css/style.css"');
-    expect(homeHtml).toContain('href="/three-d-consultancy/about"');
-
-    const aboutHtml = fs.readFileSync(path.join(outDir, 'about', 'index.html'), 'utf-8');
-    expect(aboutHtml).toContain('What We Stand For');
+    expect(homeHtml).toContain('id="about"');
+    expect(homeHtml).toContain('What We Stand For');
+    expect(homeHtml).toContain('id="services"');
+    expect(homeHtml).toContain('id="portfolio"');
+    expect(homeHtml).toContain('id="contact"');
   });
 });

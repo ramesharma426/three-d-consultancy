@@ -21,10 +21,10 @@ describe('Pages (e2e)', () => {
     await app.close();
   });
 
-  it('GET / renders the home page', async () => {
+  it('GET / renders the single-page site with the sidebar and footer', async () => {
     const response = await request(app.getHttpServer()).get('/');
     expect(response.status).toBe(200);
-    expect(response.text).toContain('class="site-nav"');
+    expect(response.text).toContain('class="sidebar-nav"');
     expect(response.text).toContain('class="site-footer"');
     expect(response.text).toContain('3D Engineering Consultancy');
     expect(response.text).toContain(
@@ -32,38 +32,30 @@ describe('Pages (e2e)', () => {
     );
   });
 
-  it('GET /about renders the about page', async () => {
-    const response = await request(app.getHttpServer()).get('/about');
-    expect(response.status).toBe(200);
-    expect(response.text).toContain('class="site-nav"');
-    expect(response.text).toContain('class="site-footer"');
+  it('GET / includes the About section', async () => {
+    const response = await request(app.getHttpServer()).get('/');
+    expect(response.text).toContain('id="about"');
     expect(response.text).toContain('What We Stand For');
     expect(response.text).toContain('Hetauda');
   });
 
-  it('GET /services renders the services page', async () => {
-    const response = await request(app.getHttpServer()).get('/services');
-    expect(response.status).toBe(200);
-    expect(response.text).toContain('class="site-nav"');
-    expect(response.text).toContain('class="site-footer"');
+  it('GET / includes the Services section', async () => {
+    const response = await request(app.getHttpServer()).get('/');
+    expect(response.text).toContain('id="services"');
     expect(response.text).toContain('3D Modeling &amp; CAD Design');
     expect(response.text).toContain('General Engineering Consultancy');
   });
 
-  it('GET /portfolio renders the portfolio page', async () => {
-    const response = await request(app.getHttpServer()).get('/portfolio');
-    expect(response.status).toBe(200);
-    expect(response.text).toContain('class="site-nav"');
-    expect(response.text).toContain('class="site-footer"');
+  it('GET / includes the Portfolio section', async () => {
+    const response = await request(app.getHttpServer()).get('/');
+    expect(response.text).toContain('id="portfolio"');
     expect(response.text).toContain('Sample projects');
     expect(response.text).toContain('Sample Residential Structural Design');
   });
 
-  it('GET /contact renders the contact page', async () => {
-    const response = await request(app.getHttpServer()).get('/contact');
-    expect(response.status).toBe(200);
-    expect(response.text).toContain('class="site-nav"');
-    expect(response.text).toContain('class="site-footer"');
+  it('GET / includes the Contact section', async () => {
+    const response = await request(app.getHttpServer()).get('/');
+    expect(response.text).toContain('id="contact"');
     expect(response.text).toContain('maps?q=27.4328334,85.0400641');
   });
 });

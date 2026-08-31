@@ -4,47 +4,134 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{company.name}} — {{company.tagline}}</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;700&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-{{> header}}
-<main>
-  <section class="hero">
+{{> sidebar}}
+<main class="page">
+
+  <section id="top" class="hero">
     <div class="container">
       <h1>{{company.tagline}}</h1>
-      <p class="hero-lead">3D modeling, structural design, and engineering consultancy for clients in Hetauda and across Nepal.</p>
-      <a class="btn btn-primary" href="/contact">Get in touch</a>
+      <p class="hero-lead">3D modeling, structural design, and <em>dependable</em> engineering consultancy for clients in Hetauda and across Nepal.</p>
+      <a class="btn btn-primary" href="#contact">Get in touch</a>
     </div>
   </section>
 
-  <section class="services-summary">
-    <div class="container grid-3">
-      <div class="card">
-        <h2>3D Modeling &amp; CAD Design</h2>
-        <p>Precise 3D models and CAD drawings for product, mechanical, and construction projects.</p>
+  <section id="about" class="page-section">
+    <div class="container">
+      <h2>About {{company.name}}</h2>
+      <p>{{company.name}} is an engineering consultancy based in {{company.location}}, providing 3D modeling, structural design, and general engineering consultancy to clients across Nepal.</p>
+
+      <h3 class="sub-heading">Our Story</h3>
+      <p><em>Placeholder — replace with the real company history.</em> {{company.name}} was founded to bring precise, dependable engineering and 3D design services to Hetauda and the surrounding region, combining technical rigor with a practical understanding of local projects.</p>
+
+      <h3 class="sub-heading">What We Stand For</h3>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Precision</h3>
+          <p>Every model and drawing is checked against real-world engineering requirements.</p>
+        </div>
+        <div class="card">
+          <h3>Local Expertise</h3>
+          <p>Based in Hetauda, with first-hand knowledge of local sites, codes, and suppliers.</p>
+        </div>
+        <div class="card">
+          <h3>Reliability</h3>
+          <p>Clear timelines, clear communication, and consistent delivery on every project.</p>
+        </div>
       </div>
-      <div class="card">
-        <h2>Architectural &amp; Structural Design</h2>
-        <p>Building design and structural engineering, from concept drawings to construction-ready plans.</p>
-      </div>
-      <div class="card">
-        <h2>General Engineering Consultancy</h2>
-        <p>Feasibility studies, project advisory, and technical consultancy across engineering disciplines.</p>
-      </div>
-    </div>
-    <div class="container" style="text-align:center;">
-      <a class="btn" href="/services">View all services</a>
     </div>
   </section>
 
-  <section class="values-strip">
-    <div class="container grid-3">
-      <div class="value"><h3>Precision</h3><p>Detail-focused engineering work you can build on.</p></div>
-      <div class="value"><h3>Local Expertise</h3><p>Grounded in Hetauda, familiar with local codes and conditions.</p></div>
-      <div class="value"><h3>Reliability</h3><p>Clear communication and dependable delivery.</p></div>
+  <section id="services" class="page-section page-section--tint">
+    <div class="container">
+      <h2>Our Services</h2>
+      <p>Engineering and design services tailored to your project, from first concept to construction-ready documentation.</p>
+
+      <div class="service-detail">
+        <h3>3D Modeling &amp; CAD Design</h3>
+        <p>Detailed 3D models and CAD drawings for mechanical, product, and construction applications.</p>
+        <ul>
+          <li>3D solid modeling and assemblies</li>
+          <li>2D CAD drafting and detailing</li>
+          <li>Design review and revisions</li>
+          <li>Rendering for presentation and client review</li>
+        </ul>
+      </div>
+
+      <div class="service-detail">
+        <h3>Architectural &amp; Structural Design</h3>
+        <p>Building design and structural engineering from concept through construction-ready plans.</p>
+        <ul>
+          <li>Architectural concept and layout design</li>
+          <li>Structural analysis and design</li>
+          <li>Construction drawing sets</li>
+          <li>Site assessment and coordination</li>
+        </ul>
+      </div>
+
+      <div class="service-detail">
+        <h3>General Engineering Consultancy</h3>
+        <p>Independent technical advice across the life of a project.</p>
+        <ul>
+          <li>Feasibility studies</li>
+          <li>Project technical advisory</li>
+          <li>Quality and compliance review</li>
+          <li>Engineering documentation support</li>
+        </ul>
+      </div>
     </div>
   </section>
+
+  <section id="portfolio" class="page-section">
+    <div class="container">
+      <h2>Portfolio</h2>
+      <div class="notice">Sample projects — replace with real project photos and descriptions.</div>
+
+      <div class="grid-3">
+        <div class="card portfolio-card">
+          <div class="portfolio-thumb" aria-hidden="true"></div>
+          <h3>Sample Residential Structural Design</h3>
+          <p>Structural design and drawings for a residential building project.</p>
+        </div>
+        <div class="card portfolio-card">
+          <div class="portfolio-thumb" aria-hidden="true"></div>
+          <h3>Sample Mechanical 3D Model</h3>
+          <p>3D modeling and CAD detailing for a mechanical component assembly.</p>
+        </div>
+        <div class="card portfolio-card">
+          <div class="portfolio-thumb" aria-hidden="true"></div>
+          <h3>Sample Feasibility Study</h3>
+          <p>Technical feasibility review and consultancy for a small commercial project.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="page-section page-section--tint">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <p>{{company.address}}</p>
+      <p>{{company.phone}} &middot; {{company.email}}</p>
+
+      <div class="map-embed">
+        <iframe
+          title="{{company.name}} location"
+          width="100%"
+          height="320"
+          loading="lazy"
+          src="https://www.google.com/maps?q={{company.mapCoordinates.lat}},{{company.mapCoordinates.lng}}&z=16&output=embed">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
 </main>
 {{> footer}}
+<script src="/js/scrollspy.js" defer></script>
 </body>
 </html>

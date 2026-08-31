@@ -2,6 +2,9 @@
 
 Marketing website for 3D Engineering Consultancy (Hetauda, Nepal), built with
 NestJS and Handlebars, exported to a static site and deployed to GitHub Pages.
+It's a single scrolling page (`views/home.hbs`) with a fixed sidebar nav
+(`views/partials/sidebar.hbs`) linking to in-page sections (`#about`,
+`#services`, `#portfolio`, `#contact`).
 
 ## Development
 
@@ -31,9 +34,9 @@ Settings → Pages, set "Source" to "GitHub Actions".
 - **Company info** (name, tagline, phone, email, address, map coordinates,
   WhatsApp link): edit `src/config/company.ts`. Every page pulls from this
   one file.
-- **Portfolio**: the Portfolio page (`views/portfolio.hbs`) currently shows
-  three sample projects. Replace the text and add real project images under
-  `public/images/` once available.
+- **Portfolio**: the Portfolio section in `views/home.hbs` (`id="portfolio"`)
+  currently shows three sample projects. Replace the text and add real
+  project images under `public/images/` once available.
 - **Base path**: the static export rewrites root-relative links (e.g.
   `/css/style.css`) with a prefix from `company.basePath` in
   `src/config/company.ts`, since GitHub Pages serves a project repo at

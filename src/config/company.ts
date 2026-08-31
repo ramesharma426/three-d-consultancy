@@ -1,5 +1,6 @@
 export const company = {
   name: '3D Engineering Consultancy',
+  shortName: '3DEC',
   tagline: 'Precision Engineering & Design Consultancy',
   location: 'Hetauda, Makwanpur District, Bagmati Province, Nepal',
   phone: '+977-986-2426259',

@@ -6,7 +6,7 @@ import { AppModule } from '../app.module';
 import { configureApp } from '../app.config';
 import { company } from '../config/company';
 
-const ROUTES = ['/', '/about', '/services', '/portfolio', '/contact'];
+const ROUTES = ['/'];
 
 function routeToOutputPath(route: string, outDir: string): string {
   if (route === '/') {
