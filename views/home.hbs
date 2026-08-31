@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{company.name}} — {{company.tagline}}</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+{{> header}}
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>{{company.tagline}}</h1>
+      <p class="hero-lead">3D modeling, structural design, and engineering consultancy for clients in Hetauda and across Nepal.</p>
+      <a class="btn btn-primary" href="/contact">Get in touch</a>
+    </div>
+  </section>
+
+  <section class="services-summary">
+    <div class="container grid-3">
+      <div class="card">
+        <h2>3D Modeling &amp; CAD Design</h2>
+        <p>Precise 3D models and CAD drawings for product, mechanical, and construction projects.</p>
+      </div>
+      <div class="card">
+        <h2>Architectural &amp; Structural Design</h2>
+        <p>Building design and structural engineering, from concept drawings to construction-ready plans.</p>
+      </div>
+      <div class="card">
+        <h2>General Engineering Consultancy</h2>
+        <p>Feasibility studies, project advisory, and technical consultancy across engineering disciplines.</p>
+      </div>
+    </div>
+    <div class="container" style="text-align:center;">
+      <a class="btn" href="/services">View all services</a>
+    </div>
+  </section>
+
+  <section class="values-strip">
+    <div class="container grid-3">
+      <div class="value"><h3>Precision</h3><p>Detail-focused engineering work you can build on.</p></div>
+      <div class="value"><h3>Local Expertise</h3><p>Grounded in Hetauda, familiar with local codes and conditions.</p></div>
+      <div class="value"><h3>Reliability</h3><p>Clear communication and dependable delivery.</p></div>
+    </div>
+  </section>
+</main>
+{{> footer}}
+</body>
+</html>
