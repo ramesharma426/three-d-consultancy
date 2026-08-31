@@ -50,4 +50,13 @@ describe('Pages (e2e)', () => {
     expect(response.text).toContain('Sample projects');
     expect(response.text).toContain('Sample Residential Structural Design');
   });
+
+  it('GET /contact renders the contact page', async () => {
+    const response = await request(app.getHttpServer()).get('/contact');
+    expect(response.status).toBe(200);
+    expect(response.text).toContain(
+      'action="https://formspree.io/f/PLACEHOLDER_ID"',
+    );
+    expect(response.text).toContain('maps?q=27.4328334,85.0400641');
+  });
 });

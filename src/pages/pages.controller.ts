@@ -26,4 +26,10 @@ export class PagesController {
   portfolio() {
     return { company };
   }
+
+  @Get('contact')
+  @Render('contact')
+  contact() {
+    return { company };
+  }
 }
