@@ -31,9 +31,6 @@ Settings → Pages, set "Source" to "GitHub Actions".
 - **Company info** (name, tagline, phone, email, address, map coordinates,
   WhatsApp link): edit `src/config/company.ts`. Every page pulls from this
   one file.
-- **Contact form**: create a free form at https://formspree.io, then replace
-  `PLACEHOLDER_ID` in `src/config/company.ts` (`formspreeAction`) with your
-  real Formspree form ID.
 - **Portfolio**: the Portfolio page (`views/portfolio.hbs`) currently shows
   three sample projects. Replace the text and add real project images under
   `public/images/` once available.

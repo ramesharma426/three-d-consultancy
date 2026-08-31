@@ -64,9 +64,6 @@ describe('Pages (e2e)', () => {
     expect(response.status).toBe(200);
     expect(response.text).toContain('class="site-nav"');
     expect(response.text).toContain('class="site-footer"');
-    expect(response.text).toContain(
-      'action="https://formspree.io/f/PLACEHOLDER_ID"',
-    );
     expect(response.text).toContain('maps?q=27.4328334,85.0400641');
   });
 });
