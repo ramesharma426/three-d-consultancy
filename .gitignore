@@ -2,3 +2,5 @@ node_modules/
 dist/
 dist-static/
 *.log
+.idea/
+.DS_Store
