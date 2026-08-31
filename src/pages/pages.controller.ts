@@ -14,4 +14,10 @@ export class PagesController {
   about() {
     return { company };
   }
+
+  @Get('services')
+  @Render('services')
+  services() {
+    return { company };
+  }
 }

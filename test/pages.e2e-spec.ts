@@ -36,4 +36,11 @@ describe('Pages (e2e)', () => {
     expect(response.text).toContain('What We Stand For');
     expect(response.text).toContain('Hetauda');
   });
+
+  it('GET /services renders the services page', async () => {
+    const response = await request(app.getHttpServer()).get('/services');
+    expect(response.status).toBe(200);
+    expect(response.text).toContain('3D Modeling &amp; CAD Design');
+    expect(response.text).toContain('General Engineering Consultancy');
+  });
 });
