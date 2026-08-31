@@ -43,4 +43,11 @@ describe('Pages (e2e)', () => {
     expect(response.text).toContain('3D Modeling &amp; CAD Design');
     expect(response.text).toContain('General Engineering Consultancy');
   });
+
+  it('GET /portfolio renders the portfolio page', async () => {
+    const response = await request(app.getHttpServer()).get('/portfolio');
+    expect(response.status).toBe(200);
+    expect(response.text).toContain('Sample projects');
+    expect(response.text).toContain('Sample Residential Structural Design');
+  });
 });

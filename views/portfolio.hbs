@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio — {{company.name}}</title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+{{> header}}
+<main>
+  <section class="page-intro">
+    <div class="container">
+      <h1>Portfolio</h1>
+      <div class="notice">Sample projects — replace with real project photos and descriptions.</div>
+    </div>
+  </section>
+
+  <section class="portfolio-grid">
+    <div class="container grid-3">
+      <div class="card portfolio-card">
+        <div class="portfolio-thumb" aria-hidden="true"></div>
+        <h3>Sample Residential Structural Design</h3>
+        <p>Structural design and drawings for a residential building project.</p>
+      </div>
+      <div class="card portfolio-card">
+        <div class="portfolio-thumb" aria-hidden="true"></div>
+        <h3>Sample Mechanical 3D Model</h3>
+        <p>3D modeling and CAD detailing for a mechanical component assembly.</p>
+      </div>
+      <div class="card portfolio-card">
+        <div class="portfolio-thumb" aria-hidden="true"></div>
+        <h3>Sample Feasibility Study</h3>
+        <p>Technical feasibility review and consultancy for a small commercial project.</p>
+      </div>
+    </div>
+  </section>
+</main>
+{{> footer}}
+</body>
+</html>

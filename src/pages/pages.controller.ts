@@ -20,4 +20,10 @@ export class PagesController {
   services() {
     return { company };
   }
+
+  @Get('portfolio')
+  @Render('portfolio')
+  portfolio() {
+    return { company };
+  }
 }
