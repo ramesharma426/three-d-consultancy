@@ -23,5 +23,10 @@ describe('renderStatic (e2e)', () => {
 
     const homeHtml = fs.readFileSync(path.join(outDir, 'index.html'), 'utf-8');
     expect(homeHtml).toContain('3D Engineering Consultancy');
+    expect(homeHtml).toContain('href="/three-d-consultancy/css/style.css"');
+    expect(homeHtml).toContain('href="/three-d-consultancy/about"');
+
+    const aboutHtml = fs.readFileSync(path.join(outDir, 'about', 'index.html'), 'utf-8');
+    expect(aboutHtml).toContain('What We Stand For');
   });
 });

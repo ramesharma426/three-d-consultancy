@@ -24,6 +24,8 @@ describe('Pages (e2e)', () => {
   it('GET / renders the home page', async () => {
     const response = await request(app.getHttpServer()).get('/');
     expect(response.status).toBe(200);
+    expect(response.text).toContain('class="site-nav"');
+    expect(response.text).toContain('class="site-footer"');
     expect(response.text).toContain('3D Engineering Consultancy');
     expect(response.text).toContain(
       'Precision Engineering &amp; Design Consultancy',
@@ -33,6 +35,8 @@ describe('Pages (e2e)', () => {
   it('GET /about renders the about page', async () => {
     const response = await request(app.getHttpServer()).get('/about');
     expect(response.status).toBe(200);
+    expect(response.text).toContain('class="site-nav"');
+    expect(response.text).toContain('class="site-footer"');
     expect(response.text).toContain('What We Stand For');
     expect(response.text).toContain('Hetauda');
   });
@@ -40,6 +44,8 @@ describe('Pages (e2e)', () => {
   it('GET /services renders the services page', async () => {
     const response = await request(app.getHttpServer()).get('/services');
     expect(response.status).toBe(200);
+    expect(response.text).toContain('class="site-nav"');
+    expect(response.text).toContain('class="site-footer"');
     expect(response.text).toContain('3D Modeling &amp; CAD Design');
     expect(response.text).toContain('General Engineering Consultancy');
   });
@@ -47,6 +53,8 @@ describe('Pages (e2e)', () => {
   it('GET /portfolio renders the portfolio page', async () => {
     const response = await request(app.getHttpServer()).get('/portfolio');
     expect(response.status).toBe(200);
+    expect(response.text).toContain('class="site-nav"');
+    expect(response.text).toContain('class="site-footer"');
     expect(response.text).toContain('Sample projects');
     expect(response.text).toContain('Sample Residential Structural Design');
   });
@@ -54,6 +62,8 @@ describe('Pages (e2e)', () => {
   it('GET /contact renders the contact page', async () => {
     const response = await request(app.getHttpServer()).get('/contact');
     expect(response.status).toBe(200);
+    expect(response.text).toContain('class="site-nav"');
+    expect(response.text).toContain('class="site-footer"');
     expect(response.text).toContain(
       'action="https://formspree.io/f/PLACEHOLDER_ID"',
     );

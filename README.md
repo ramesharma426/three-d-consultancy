@@ -37,3 +37,10 @@ Settings → Pages, set "Source" to "GitHub Actions".
 - **Portfolio**: the Portfolio page (`views/portfolio.hbs`) currently shows
   three sample projects. Replace the text and add real project images under
   `public/images/` once available.
+- **Base path**: the static export rewrites root-relative links (e.g.
+  `/css/style.css`) with a prefix from `company.basePath` in
+  `src/config/company.ts`, since GitHub Pages serves a project repo at
+  `https://<user>.github.io/<repo-name>/`. If this repo is ever renamed, or
+  the site moves to a `<user>.github.io` user/org repo or a custom domain,
+  update `basePath` to match (use `''` for a user/org repo or custom
+  domain).

@@ -4,6 +4,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import { AppModule } from '../app.module';
 import { configureApp } from '../app.config';
+import { company } from '../config/company';
 
 const ROUTES = ['/', '/about', '/services', '/portfolio', '/contact'];
 
@@ -28,15 +29,21 @@ export async function renderStatic(outDir: string): Promise<void> {
   const port = typeof address === 'string' || address === null ? 0 : address.port;
   const baseUrl = `http://127.0.0.1:${port}`;
 
-  for (const route of ROUTES) {
-    const response = await fetch(`${baseUrl}${route}`);
-    const html = await response.text();
-    const outputPath = routeToOutputPath(route, outDir);
-    fs.mkdirSync(path.dirname(outputPath), { recursive: true });
-    fs.writeFileSync(outputPath, html);
+  try {
+    for (const route of ROUTES) {
+      const response = await fetch(`${baseUrl}${route}`);
+      if (!response.ok) {
+        throw new Error(`Failed to render ${route}: HTTP ${response.status}`);
+      }
+      const rawHtml = await response.text();
+      const html = rawHtml.replace(/href="\//g, `href="${company.basePath}/`);
+      const outputPath = routeToOutputPath(route, outDir);
+      fs.mkdirSync(path.dirname(outputPath), { recursive: true });
+      fs.writeFileSync(outputPath, html);
+    }
+  } finally {
+    await app.close();
   }
-
-  await app.close();
 
   fs.cpSync(path.join(__dirname, '..', '..', 'public'), outDir, {
     recursive: true,
