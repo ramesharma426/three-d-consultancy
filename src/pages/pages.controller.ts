@@ -8,4 +8,10 @@ export class PagesController {
   home() {
     return { company };
   }
+
+  @Get('about')
+  @Render('about')
+  about() {
+    return { company };
+  }
 }

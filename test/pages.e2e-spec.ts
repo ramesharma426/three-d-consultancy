@@ -29,4 +29,11 @@ describe('Pages (e2e)', () => {
       'Precision Engineering &amp; Design Consultancy',
     );
   });
+
+  it('GET /about renders the about page', async () => {
+    const response = await request(app.getHttpServer()).get('/about');
+    expect(response.status).toBe(200);
+    expect(response.text).toContain('What We Stand For');
+    expect(response.text).toContain('Hetauda');
+  });
 });
