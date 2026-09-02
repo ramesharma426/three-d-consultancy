@@ -42,7 +42,8 @@ describe('Pages (e2e)', () => {
   it('GET / includes the Services section', async () => {
     const response = await request(app.getHttpServer()).get('/');
     expect(response.text).toContain('id="services"');
-    expect(response.text).toContain('3D Modeling &amp; CAD Design');
+    expect(response.text).toContain('House Design — 2D &amp; 3D CAD');
+    expect(response.text).toContain('Land &amp; Site Survey');
     expect(response.text).toContain('General Engineering Consultancy');
   });
 
