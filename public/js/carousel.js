@@ -53,6 +53,46 @@
     root.addEventListener('focusout', start);
     window.addEventListener('resize', update);
 
+    var touchStartX = null;
+    var touchStartY = null;
+    var touchDeltaX = 0;
+    var SWIPE_THRESHOLD = 40;
+
+    track.addEventListener(
+      'touchstart',
+      function (e) {
+        var t = e.touches[0];
+        touchStartX = t.clientX;
+        touchStartY = t.clientY;
+        touchDeltaX = 0;
+        stop();
+      },
+      { passive: true },
+    );
+
+    track.addEventListener(
+      'touchmove',
+      function (e) {
+        if (touchStartX === null) return;
+        var t = e.touches[0];
+        touchDeltaX = t.clientX - touchStartX;
+      },
+      { passive: true },
+    );
+
+    track.addEventListener('touchend', function (e) {
+      if (touchStartX === null) return;
+      var t = e.changedTouches[0];
+      var deltaY = t.clientY - touchStartY;
+      if (Math.abs(touchDeltaX) > SWIPE_THRESHOLD && Math.abs(touchDeltaX) > Math.abs(deltaY)) {
+        go(touchDeltaX < 0 ? 1 : -1);
+      }
+      touchStartX = null;
+      touchStartY = null;
+      touchDeltaX = 0;
+      start();
+    });
+
     update();
     start();
   });
