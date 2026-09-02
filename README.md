@@ -44,8 +44,8 @@ The site is served from the custom domain `engconsultancy3d.com.np`
   has one real project ("Sample Residential Structural Design") shown as an
   auto-advancing photo carousel (`public/js/carousel.js`) with photos in
   `public/images/portfolio/`, click-to-enlarge via a modal
-  (`public/js/lightbox.js`), plus two still-placeholder sample projects.
-  Replace the placeholders the same way once real photos exist for them.
+  (`public/js/lightbox.js`). Add a second project the same way (a
+  `.portfolio-feature` block with its own carousel) once real photos exist.
   See `CLAUDE.md` for why the carousel uses `object-fit: contain` rather
   than `cover`.
 - **Base path**: the static export rewrites root-relative links (e.g.
