@@ -6,6 +6,8 @@ export const company = {
   phone: '+977-986-2426259',
   phoneHref: 'tel:+9779862426259',
   whatsappHref: 'https://wa.me/9779862426259',
+  messengerHref: 'https://m.me/61563453006366',
+  facebookHref: 'https://www.facebook.com/profile.php?id=61563453006366',
   email: '3dengineeringconsultancy2019@gmail.com',
   address: 'Nagarpalika Road, Hetauda, Nepal, 44100',
   mapCoordinates: { lat: 27.4328334, lng: 85.0400641 },

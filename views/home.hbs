@@ -43,6 +43,7 @@
     "image": "{{company.siteUrl}}/images/logo-full.png",
     "telephone": "{{company.phone}}",
     "email": "{{company.email}}",
+    "sameAs": ["{{{company.facebookHref}}}"],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "{{company.address}}",
@@ -309,6 +310,7 @@
       </h2>
       <p>{{company.address}}</p>
       <p>{{company.phone}} &middot; {{company.email}}</p>
+      <p><a href="{{company.facebookHref}}" target="_blank" rel="noopener">Facebook</a></p>
 
       <div class="map-embed">
         <iframe
@@ -324,6 +326,7 @@
 
 </main>
 {{> footer}}
+{{> float-contact}}
 <script src="/js/scrollspy.js" defer></script>
 <script src="/js/i18n.js" defer></script>
 <script src="/js/carousel.js" defer></script>

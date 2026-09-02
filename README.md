@@ -5,7 +5,8 @@ NestJS and Handlebars, exported to a static site and deployed to GitHub Pages.
 It's a single scrolling page (`views/home.hbs`) with a fixed sidebar nav
 (`views/partials/sidebar.hbs`) linking to in-page sections (`#about`,
 `#services`, `#portfolio`, `#contact`), with an EN/नेपाली content toggle
-(`public/js/i18n.js`) — see `CLAUDE.md` for how it works.
+(`public/js/i18n.js`) and fixed Messenger/WhatsApp bubbles
+(`views/partials/float-contact.hbs`) — see `CLAUDE.md` for how these work.
 
 ## Development
 
