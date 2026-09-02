@@ -67,3 +67,10 @@ The site is served from the custom domain `engconsultancy3d.com.np`
 - **Nepali translations**: every translatable string in `home.hbs` and the
   partials is a pair of `data-i18n-en`/`data-i18n-ne` spans next to each
   other (see `CLAUDE.md`). Meta tags and JSON-LD are English-only.
+- **Contact badges/map card**: `views/partials/contact-badges.hbs` (phone,
+  email, Facebook icons) is shared by the footer and Contact section. The
+  Contact section's map has a floating "Google-style" info card
+  (`.gmap-card`) built from `company.mapCoordinates` — see `CLAUDE.md`.
+- **Smooth scroll**: `public/js/vendor/lenis.min.js` (vendored, MIT) +
+  `public/js/smooth-scroll.js`. Elements that shouldn't be intercepted by
+  it (the carousel, the lightbox) carry `data-lenis-prevent`.

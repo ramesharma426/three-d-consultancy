@@ -4,6 +4,7 @@
 
   var overlay = document.createElement('div');
   overlay.className = 'lightbox';
+  overlay.setAttribute('data-lenis-prevent', '');
   overlay.innerHTML =
     '<button type="button" class="lightbox-close" aria-label="Close">&times;</button>' +
     '<img class="lightbox-img" alt="">';

@@ -2,10 +2,7 @@
   <div class="container footer-inner">
     <img src="/images/logo-mark.png" alt="{{company.name}}" class="footer-mark">
     <p>{{company.name}} &mdash; {{company.location}}</p>
-    <p>{{company.phone}} &middot; {{company.email}}</p>
-    <p><a href="{{company.facebookHref}}" target="_blank" rel="noopener" aria-label="Facebook" class="icon-link">
-      <svg class="icon-facebook" viewBox="0 0 320 512" aria-hidden="true"><path fill="currentColor" d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg>
-    </a></p>
+    {{> contact-badges}}
     <p class="footer-copyright">
       &copy; {{company.year}} {{company.name}}.
       <span data-i18n-en>All rights reserved.</span>
