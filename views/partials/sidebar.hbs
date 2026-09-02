@@ -1,27 +1,43 @@
-<a href="#top" class="skip">Skip to content</a>
+<a href="#top" class="skip">
+  <span data-i18n-en>Skip to content</span>
+  <span data-i18n-ne hidden>सामग्रीमा जानुहोस्</span>
+</a>
 <aside class="sidebar">
-  <a href="#top" class="sidebar-mark" aria-label="Back to top">{{company.shortName}}</a>
+  <a href="#top" class="sidebar-mark" aria-label="Back to top">
+    <img src="/images/logo-full.png" alt="{{company.name}}" class="sidebar-mark-icon">
+  </a>
   <nav class="sidebar-nav" aria-label="Sections">
     <ul>
-      <li><a href="#about" class="sidebar-tick"><i aria-hidden="true"></i><span>About</span></a></li>
-      <li><a href="#services" class="sidebar-tick"><i aria-hidden="true"></i><span>Services</span></a></li>
-      <li><a href="#portfolio" class="sidebar-tick"><i aria-hidden="true"></i><span>Portfolio</span></a></li>
-      <li><a href="#contact" class="sidebar-tick"><i aria-hidden="true"></i><span>Contact</span></a></li>
+      <li><a href="#about" class="sidebar-tick"><i aria-hidden="true"></i><span data-i18n-en>About</span><span data-i18n-ne hidden>हाम्रोबारे</span></a></li>
+      <li><a href="#services" class="sidebar-tick"><i aria-hidden="true"></i><span data-i18n-en>Services</span><span data-i18n-ne hidden>सेवाहरू</span></a></li>
+      <li><a href="#portfolio" class="sidebar-tick"><i aria-hidden="true"></i><span data-i18n-en>Portfolio</span><span data-i18n-ne hidden>पोर्टफोलियो</span></a></li>
+      <li><a href="#contact" class="sidebar-tick"><i aria-hidden="true"></i><span data-i18n-en>Contact</span><span data-i18n-ne hidden>सम्पर्क</span></a></li>
     </ul>
   </nav>
   <div class="sidebar-foot">
-    <a href="{{company.phoneHref}}">Call</a>
+    <a href="{{company.phoneHref}}"><span data-i18n-en>Call</span><span data-i18n-ne hidden>कल</span></a>
     <a href="{{company.whatsappHref}}" target="_blank" rel="noopener">WhatsApp</a>
+    <div class="lang-toggle" role="group" aria-label="Language / भाषा">
+      <button type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang-btn="ne" aria-pressed="false">ने</button>
+    </div>
   </div>
 </aside>
 <header class="topbar">
   <div class="topbar-inner">
-    <a href="#top" class="brand-name">{{company.name}}</a>
+    <a href="#top" class="brand-name">
+      <img src="/images/logo-mark.png" alt="" class="brand-icon">
+      <span>{{company.name}}</span>
+    </a>
     <nav class="topbar-nav" aria-label="Sections">
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#portfolio">Portfolio</a>
-      <a href="#contact">Contact</a>
+      <a href="#about"><span data-i18n-en>About</span><span data-i18n-ne hidden>हाम्रोबारे</span></a>
+      <a href="#services"><span data-i18n-en>Services</span><span data-i18n-ne hidden>सेवाहरू</span></a>
+      <a href="#portfolio"><span data-i18n-en>Portfolio</span><span data-i18n-ne hidden>पोर्टफोलियो</span></a>
+      <a href="#contact"><span data-i18n-en>Contact</span><span data-i18n-ne hidden>सम्पर्क</span></a>
+      <div class="lang-toggle" role="group" aria-label="Language / भाषा">
+        <button type="button" data-lang-btn="en" aria-pressed="true">EN</button>
+        <button type="button" data-lang-btn="ne" aria-pressed="false">ने</button>
+      </div>
     </nav>
   </div>
 </header>

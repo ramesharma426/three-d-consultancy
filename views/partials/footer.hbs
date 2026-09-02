@@ -1,7 +1,12 @@
 <footer class="site-footer">
   <div class="container footer-inner">
+    <img src="/images/logo-mark.png" alt="{{company.name}}" class="footer-mark">
     <p>{{company.name}} &mdash; {{company.location}}</p>
     <p>{{company.phone}} &middot; {{company.email}}</p>
-    <p class="footer-copyright">&copy; {{company.year}} {{company.name}}. All rights reserved.</p>
+    <p class="footer-copyright">
+      &copy; {{company.year}} {{company.name}}.
+      <span data-i18n-en>All rights reserved.</span>
+      <span data-i18n-ne hidden>सर्वाधिकार सुरक्षित।</span>
+    </p>
   </div>
 </footer>

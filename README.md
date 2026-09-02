@@ -4,7 +4,8 @@ Marketing website for 3D Engineering Consultancy (Hetauda, Nepal), built with
 NestJS and Handlebars, exported to a static site and deployed to GitHub Pages.
 It's a single scrolling page (`views/home.hbs`) with a fixed sidebar nav
 (`views/partials/sidebar.hbs`) linking to in-page sections (`#about`,
-`#services`, `#portfolio`, `#contact`).
+`#services`, `#portfolio`, `#contact`), with an EN/नेपाली content toggle
+(`public/js/i18n.js`) — see `CLAUDE.md` for how it works.
 
 ## Development
 
@@ -29,18 +30,39 @@ Pushing to `main` triggers `.github/workflows/deploy.yml`, which builds the
 static site and publishes it to GitHub Pages. One-time setup: in the repo's
 Settings → Pages, set "Source" to "GitHub Actions".
 
+The site is served from the custom domain `engconsultancy3d.com.np`
+(`public/CNAME`), not the default `github.io` URL, so `company.basePath` is
+`''`. See `CLAUDE.md` if this ever changes.
+
 ## Replacing placeholder content
 
 - **Company info** (name, tagline, phone, email, address, map coordinates,
   WhatsApp link): edit `src/config/company.ts`. Every page pulls from this
   one file.
 - **Portfolio**: the Portfolio section in `views/home.hbs` (`id="portfolio"`)
-  currently shows three sample projects. Replace the text and add real
-  project images under `public/images/` once available.
+  has one real project ("Sample Residential Structural Design") shown as an
+  auto-advancing photo carousel (`public/js/carousel.js`) with photos in
+  `public/images/portfolio/`, click-to-enlarge via a modal
+  (`public/js/lightbox.js`), plus two still-placeholder sample projects.
+  Replace the placeholders the same way once real photos exist for them.
+  See `CLAUDE.md` for why the carousel uses `object-fit: contain` rather
+  than `cover`.
 - **Base path**: the static export rewrites root-relative links (e.g.
   `/css/style.css`) with a prefix from `company.basePath` in
-  `src/config/company.ts`, since GitHub Pages serves a project repo at
-  `https://<user>.github.io/<repo-name>/`. If this repo is ever renamed, or
-  the site moves to a `<user>.github.io` user/org repo or a custom domain,
-  update `basePath` to match (use `''` for a user/org repo or custom
-  domain).
+  `src/config/company.ts`, since a bare GitHub Pages project repo is served
+  at `https://<user>.github.io/<repo-name>/`. This site uses a custom
+  domain instead (served at its own root), so `basePath` is `''`. If the
+  custom domain is ever removed, set `basePath` back to `/<repo-name>`.
+- **Logo/favicon**: `public/images/logo-full.png` (sidebar mark) and
+  `public/images/logo-mark.png` (topbar/footer) are generated from the
+  client-supplied logo with the background chroma-keyed to transparent;
+  `favicon.ico` and the `favicon-*.png`/`apple-touch-icon.png` files are
+  resized from the same source. Regenerate all of them together if the
+  logo changes.
+- **SEO**: meta description, Open Graph/Twitter tags, canonical URL, and
+  JSON-LD are in `views/home.hbs`'s `<head>`, driven by `company.siteUrl`.
+  `public/robots.txt` and `public/sitemap.xml` hardcode the domain and need
+  updating by hand if it ever changes.
+- **Nepali translations**: every translatable string in `home.hbs` and the
+  partials is a pair of `data-i18n-en`/`data-i18n-ne` spans next to each
+  other (see `CLAUDE.md`). Meta tags and JSON-LD are English-only.

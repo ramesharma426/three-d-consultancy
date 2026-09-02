@@ -4,10 +4,59 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{{company.name}} — {{company.tagline}}</title>
+  <meta name="description" content="{{company.name}} provides 3D modeling &amp; CAD design, architectural &amp; structural design, and general engineering consultancy in {{company.location}}.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="{{company.siteUrl}}/">
+  <meta name="theme-color" content="#16294a">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{company.name}}">
+  <meta property="og:title" content="{{company.name}} — {{company.tagline}}">
+  <meta property="og:description" content="3D modeling, structural design, and dependable engineering consultancy for clients in {{company.location}}.">
+  <meta property="og:url" content="{{company.siteUrl}}/">
+  <meta property="og:image" content="{{company.siteUrl}}/images/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{company.name}} — {{company.tagline}}">
+  <meta name="twitter:description" content="3D modeling, structural design, and dependable engineering consultancy for clients in {{company.location}}.">
+  <meta name="twitter:image" content="{{company.siteUrl}}/images/og-image.png">
+
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/images/favicon-192.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;700&family=Martian+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@400;500;700&family=Martian+Mono:wght@400;500&family=Noto+Sans+Devanagari:wght@400;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/style.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "{{company.name}}",
+    "description": "3D modeling & CAD design, architectural & structural design, and general engineering consultancy.",
+    "url": "{{company.siteUrl}}/",
+    "image": "{{company.siteUrl}}/images/logo-full.png",
+    "telephone": "{{company.phone}}",
+    "email": "{{company.email}}",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "{{company.address}}",
+      "addressLocality": "Hetauda",
+      "addressRegion": "Bagmati Province",
+      "addressCountry": "NP"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": {{company.mapCoordinates.lat}},
+      "longitude": {{company.mapCoordinates.lng}}
+    }
+  }
+  </script>
 </head>
 <body>
 {{> sidebar}}
@@ -15,33 +64,75 @@
 
   <section id="top" class="hero">
     <div class="container">
-      <h1>{{company.tagline}}</h1>
-      <p class="hero-lead">3D modeling, structural design, and <em>dependable</em> engineering consultancy for clients in Hetauda and across Nepal.</p>
-      <a class="btn btn-primary" href="#contact">Get in touch</a>
+      <h1>
+        <span data-i18n-en>{{company.tagline}}</span>
+        <span data-i18n-ne hidden>{{company.taglineNe}}</span>
+      </h1>
+      <p class="hero-lead">
+        <span data-i18n-en>3D modeling, structural design, and <em>dependable</em> engineering consultancy for clients in Hetauda and across Nepal.</span>
+        <span data-i18n-ne hidden>हेटौँडा र नेपालभरका ग्राहकहरूका लागि 3D मोडेलिङ, संरचनात्मक डिजाइन, र <em>भरपर्दो</em> इन्जिनियरिङ परामर्श सेवा।</span>
+      </p>
+      <a class="btn btn-primary" href="#contact">
+        <span data-i18n-en>Get in touch</span>
+        <span data-i18n-ne hidden>सम्पर्क गर्नुहोस्</span>
+      </a>
     </div>
   </section>
 
   <section id="about" class="page-section">
     <div class="container">
-      <h2>About {{company.name}}</h2>
-      <p>{{company.name}} is an engineering consultancy based in {{company.location}}, providing 3D modeling, structural design, and general engineering consultancy to clients across Nepal.</p>
+      <h2>
+        <span data-i18n-en>About {{company.name}}</span>
+        <span data-i18n-ne hidden>{{company.name}} बारे</span>
+      </h2>
+      <p>
+        <span data-i18n-en>{{company.name}} is an engineering consultancy based in {{company.location}}, providing 3D modeling, structural design, and general engineering consultancy to clients across Nepal.</span>
+        <span data-i18n-ne hidden>{{company.name}} हेटौँडा, मकवानपुर जिल्ला, बागमती प्रदेश, नेपालमा आधारित एक इन्जिनियरिङ परामर्श कम्पनी हो, जसले नेपालभरका ग्राहकहरूलाई 3D मोडेलिङ, संरचनात्मक डिजाइन, र सामान्य इन्जिनियरिङ परामर्श सेवा प्रदान गर्दछ।</span>
+      </p>
 
-      <h3 class="sub-heading">Our Story</h3>
-      <p><em>Placeholder — replace with the real company history.</em> {{company.name}} was founded to bring precise, dependable engineering and 3D design services to Hetauda and the surrounding region, combining technical rigor with a practical understanding of local projects.</p>
+      <h3 class="sub-heading">
+        <span data-i18n-en>Our Story</span>
+        <span data-i18n-ne hidden>हाम्रो कथा</span>
+      </h3>
+      <p>
+        <span data-i18n-en><em>Placeholder — replace with the real company history.</em> {{company.name}} was founded to bring precise, dependable engineering and 3D design services to Hetauda and the surrounding region, combining technical rigor with a practical understanding of local projects.</span>
+        <span data-i18n-ne hidden><em>प्लेसहोल्डर — वास्तविक कम्पनी इतिहासले प्रतिस्थापन गर्नुहोस्।</em> {{company.name}} हेटौँडा र वरपरका क्षेत्रहरूमा यथार्थ र भरपर्दो इन्जिनियरिङ तथा 3D डिजाइन सेवा पुर्‍याउन स्थापना गरिएको हो, जसले प्राविधिक कठोरतालाई स्थानीय परियोजनाहरूको व्यावहारिक बुझाइसँग जोड्दछ।</span>
+      </p>
 
-      <h3 class="sub-heading">What We Stand For</h3>
+      <h3 class="sub-heading">
+        <span data-i18n-en>What We Stand For</span>
+        <span data-i18n-ne hidden>हाम्रा मूल्यहरू</span>
+      </h3>
       <div class="grid-3">
         <div class="card">
-          <h3>Precision</h3>
-          <p>Every model and drawing is checked against real-world engineering requirements.</p>
+          <h3>
+            <span data-i18n-en>Precision</span>
+            <span data-i18n-ne hidden>यथार्थता</span>
+          </h3>
+          <p>
+            <span data-i18n-en>Every model and drawing is checked against real-world engineering requirements.</span>
+            <span data-i18n-ne hidden>प्रत्येक मोडेल र नक्सा वास्तविक इन्जिनियरिङ आवश्यकताहरू अनुसार जाँच गरिन्छ।</span>
+          </p>
         </div>
         <div class="card">
-          <h3>Local Expertise</h3>
-          <p>Based in Hetauda, with first-hand knowledge of local sites, codes, and suppliers.</p>
+          <h3>
+            <span data-i18n-en>Local Expertise</span>
+            <span data-i18n-ne hidden>स्थानीय विशेषज्ञता</span>
+          </h3>
+          <p>
+            <span data-i18n-en>Based in Hetauda, with first-hand knowledge of local sites, codes, and suppliers.</span>
+            <span data-i18n-ne hidden>हेटौँडामा आधारित, स्थानीय साइट, नियम, र आपूर्तिकर्ताहरूको प्रत्यक्ष ज्ञानसहित।</span>
+          </p>
         </div>
         <div class="card">
-          <h3>Reliability</h3>
-          <p>Clear timelines, clear communication, and consistent delivery on every project.</p>
+          <h3>
+            <span data-i18n-en>Reliability</span>
+            <span data-i18n-ne hidden>भरपर्दोपन</span>
+          </h3>
+          <p>
+            <span data-i18n-en>Clear timelines, clear communication, and consistent delivery on every project.</span>
+            <span data-i18n-ne hidden>स्पष्ट समयतालिका, स्पष्ट सञ्चार, र हरेक परियोजनामा निरन्तर डेलिभरी।</span>
+          </p>
         </div>
       </div>
     </div>
@@ -49,39 +140,99 @@
 
   <section id="services" class="page-section page-section--tint">
     <div class="container">
-      <h2>Our Services</h2>
-      <p>Engineering and design services tailored to your project, from first concept to construction-ready documentation.</p>
+      <h2>
+        <span data-i18n-en>Our Services</span>
+        <span data-i18n-ne hidden>हाम्रा सेवाहरू</span>
+      </h2>
+      <p>
+        <span data-i18n-en>Engineering and design services tailored to your project, from first concept to construction-ready documentation.</span>
+        <span data-i18n-ne hidden>पहिलो अवधारणादेखि निर्माणका लागि तयार कागजातसम्म, तपाईंको परियोजना अनुरूप इन्जिनियरिङ र डिजाइन सेवाहरू।</span>
+      </p>
 
       <div class="service-detail">
-        <h3>3D Modeling &amp; CAD Design</h3>
-        <p>Detailed 3D models and CAD drawings for mechanical, product, and construction applications.</p>
+        <h3>
+          <span data-i18n-en>3D Modeling &amp; CAD Design</span>
+          <span data-i18n-ne hidden>3D मोडेलिङ र CAD डिजाइन</span>
+        </h3>
+        <p>
+          <span data-i18n-en>Detailed 3D models and CAD drawings for mechanical, product, and construction applications.</span>
+          <span data-i18n-ne hidden>मेकानिकल, उत्पादन, र निर्माण अनुप्रयोगहरूका लागि विस्तृत 3D मोडेल र CAD नक्साहरू।</span>
+        </p>
         <ul>
-          <li>3D solid modeling and assemblies</li>
-          <li>2D CAD drafting and detailing</li>
-          <li>Design review and revisions</li>
-          <li>Rendering for presentation and client review</li>
+          <li>
+            <span data-i18n-en>3D solid modeling and assemblies</span>
+            <span data-i18n-ne hidden>3D सलिड मोडेलिङ र एसेम्बली</span>
+          </li>
+          <li>
+            <span data-i18n-en>2D CAD drafting and detailing</span>
+            <span data-i18n-ne hidden>2D CAD ड्राफ्टिङ र डिटेलिङ</span>
+          </li>
+          <li>
+            <span data-i18n-en>Design review and revisions</span>
+            <span data-i18n-ne hidden>डिजाइन समीक्षा र संशोधन</span>
+          </li>
+          <li>
+            <span data-i18n-en>Rendering for presentation and client review</span>
+            <span data-i18n-ne hidden>प्रस्तुतीकरण र ग्राहक समीक्षाका लागि रेन्डरिङ</span>
+          </li>
         </ul>
       </div>
 
       <div class="service-detail">
-        <h3>Architectural &amp; Structural Design</h3>
-        <p>Building design and structural engineering from concept through construction-ready plans.</p>
+        <h3>
+          <span data-i18n-en>Architectural &amp; Structural Design</span>
+          <span data-i18n-ne hidden>वास्तुकला र संरचनात्मक डिजाइन</span>
+        </h3>
+        <p>
+          <span data-i18n-en>Building design and structural engineering from concept through construction-ready plans.</span>
+          <span data-i18n-ne hidden>अवधारणादेखि निर्माणका लागि तयार योजनासम्म भवन डिजाइन र संरचनात्मक इन्जिनियरिङ।</span>
+        </p>
         <ul>
-          <li>Architectural concept and layout design</li>
-          <li>Structural analysis and design</li>
-          <li>Construction drawing sets</li>
-          <li>Site assessment and coordination</li>
+          <li>
+            <span data-i18n-en>Architectural concept and layout design</span>
+            <span data-i18n-ne hidden>वास्तुकला अवधारणा र लेआउट डिजाइन</span>
+          </li>
+          <li>
+            <span data-i18n-en>Structural analysis and design</span>
+            <span data-i18n-ne hidden>संरचनात्मक विश्लेषण र डिजाइन</span>
+          </li>
+          <li>
+            <span data-i18n-en>Construction drawing sets</span>
+            <span data-i18n-ne hidden>निर्माण नक्सा सेटहरू</span>
+          </li>
+          <li>
+            <span data-i18n-en>Site assessment and coordination</span>
+            <span data-i18n-ne hidden>साइट मूल्याङ्कन र समन्वय</span>
+          </li>
         </ul>
       </div>
 
       <div class="service-detail">
-        <h3>General Engineering Consultancy</h3>
-        <p>Independent technical advice across the life of a project.</p>
+        <h3>
+          <span data-i18n-en>General Engineering Consultancy</span>
+          <span data-i18n-ne hidden>सामान्य इन्जिनियरिङ परामर्श</span>
+        </h3>
+        <p>
+          <span data-i18n-en>Independent technical advice across the life of a project.</span>
+          <span data-i18n-ne hidden>परियोजनाको सम्पूर्ण अवधिभर स्वतन्त्र प्राविधिक सल्लाह।</span>
+        </p>
         <ul>
-          <li>Feasibility studies</li>
-          <li>Project technical advisory</li>
-          <li>Quality and compliance review</li>
-          <li>Engineering documentation support</li>
+          <li>
+            <span data-i18n-en>Feasibility studies</span>
+            <span data-i18n-ne hidden>सम्भाव्यता अध्ययन</span>
+          </li>
+          <li>
+            <span data-i18n-en>Project technical advisory</span>
+            <span data-i18n-ne hidden>परियोजना प्राविधिक सल्लाह</span>
+          </li>
+          <li>
+            <span data-i18n-en>Quality and compliance review</span>
+            <span data-i18n-ne hidden>गुणस्तर र अनुपालन समीक्षा</span>
+          </li>
+          <li>
+            <span data-i18n-en>Engineering documentation support</span>
+            <span data-i18n-ne hidden>इन्जिनियरिङ कागजात सहयोग</span>
+          </li>
         </ul>
       </div>
     </div>
@@ -89,24 +240,62 @@
 
   <section id="portfolio" class="page-section">
     <div class="container">
-      <h2>Portfolio</h2>
-      <div class="notice">Sample projects — replace with real project photos and descriptions.</div>
+      <h2>
+        <span data-i18n-en>Portfolio</span>
+        <span data-i18n-ne hidden>पोर्टफोलियो</span>
+      </h2>
+      <div class="notice">
+        <span data-i18n-en>The other two projects below are samples — replace with real project photos and descriptions.</span>
+        <span data-i18n-ne hidden>तलका अन्य दुई परियोजना नमूना हुन् — वास्तविक परियोजना फोटो र विवरणले प्रतिस्थापन गर्नुहोस्।</span>
+      </div>
 
-      <div class="grid-3">
+      <div class="portfolio-feature">
+        <h3>
+          <span data-i18n-en>Sample Residential Structural Design</span>
+          <span data-i18n-ne hidden>नमूना आवासीय संरचनात्मक डिजाइन</span>
+        </h3>
+        <p>
+          <span data-i18n-en>Structural design and drawings for a residential building project.</span>
+          <span data-i18n-ne hidden>आवासीय भवन परियोजनाका लागि संरचनात्मक डिजाइन र नक्साहरू।</span>
+        </p>
+        <div class="portfolio-carousel" data-carousel>
+          <div class="carousel-track">
+            {{#each portfolioPhotos}}
+            <button
+              type="button"
+              class="carousel-card"
+              data-lightbox-src="{{this.src}}"
+              aria-label="View exterior photo {{this.n}} full size"
+            ><img src="{{this.src}}" alt="" class="carousel-card-img" loading="lazy"></button>
+            {{/each}}
+          </div>
+          <button type="button" class="carousel-nav carousel-nav--prev" aria-label="Previous photo">&larr;</button>
+          <button type="button" class="carousel-nav carousel-nav--next" aria-label="Next photo">&rarr;</button>
+        </div>
+      </div>
+
+      <div class="grid-2">
         <div class="card portfolio-card">
           <div class="portfolio-thumb" aria-hidden="true"></div>
-          <h3>Sample Residential Structural Design</h3>
-          <p>Structural design and drawings for a residential building project.</p>
+          <h3>
+            <span data-i18n-en>Sample Mechanical 3D Model</span>
+            <span data-i18n-ne hidden>नमूना मेकानिकल 3D मोडेल</span>
+          </h3>
+          <p>
+            <span data-i18n-en>3D modeling and CAD detailing for a mechanical component assembly.</span>
+            <span data-i18n-ne hidden>मेकानिकल कम्पोनेन्ट एसेम्बलीका लागि 3D मोडेलिङ र CAD डिटेलिङ।</span>
+          </p>
         </div>
         <div class="card portfolio-card">
           <div class="portfolio-thumb" aria-hidden="true"></div>
-          <h3>Sample Mechanical 3D Model</h3>
-          <p>3D modeling and CAD detailing for a mechanical component assembly.</p>
-        </div>
-        <div class="card portfolio-card">
-          <div class="portfolio-thumb" aria-hidden="true"></div>
-          <h3>Sample Feasibility Study</h3>
-          <p>Technical feasibility review and consultancy for a small commercial project.</p>
+          <h3>
+            <span data-i18n-en>Sample Feasibility Study</span>
+            <span data-i18n-ne hidden>नमूना सम्भाव्यता अध्ययन</span>
+          </h3>
+          <p>
+            <span data-i18n-en>Technical feasibility review and consultancy for a small commercial project.</span>
+            <span data-i18n-ne hidden>साना व्यावसायिक परियोजनाका लागि प्राविधिक सम्भाव्यता समीक्षा र परामर्श।</span>
+          </p>
         </div>
       </div>
     </div>
@@ -114,7 +303,10 @@
 
   <section id="contact" class="page-section page-section--tint">
     <div class="container">
-      <h2>Contact Us</h2>
+      <h2>
+        <span data-i18n-en>Contact Us</span>
+        <span data-i18n-ne hidden>सम्पर्क गर्नुहोस्</span>
+      </h2>
       <p>{{company.address}}</p>
       <p>{{company.phone}} &middot; {{company.email}}</p>
 
@@ -133,5 +325,8 @@
 </main>
 {{> footer}}
 <script src="/js/scrollspy.js" defer></script>
+<script src="/js/i18n.js" defer></script>
+<script src="/js/carousel.js" defer></script>
+<script src="/js/lightbox.js" defer></script>
 </body>
 </html>

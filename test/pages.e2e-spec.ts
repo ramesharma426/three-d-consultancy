@@ -49,8 +49,8 @@ describe('Pages (e2e)', () => {
   it('GET / includes the Portfolio section', async () => {
     const response = await request(app.getHttpServer()).get('/');
     expect(response.text).toContain('id="portfolio"');
-    expect(response.text).toContain('Sample projects');
     expect(response.text).toContain('Sample Residential Structural Design');
+    expect(response.text).toContain('/images/portfolio/residential-01.jpg');
   });
 
   it('GET / includes the Contact section', async () => {

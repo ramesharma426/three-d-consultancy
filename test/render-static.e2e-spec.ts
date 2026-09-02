@@ -17,10 +17,13 @@ describe('renderStatic (e2e)', () => {
     expect(fs.existsSync(path.join(outDir, 'css', 'style.css'))).toBe(true);
     expect(fs.existsSync(path.join(outDir, 'js', 'scrollspy.js'))).toBe(true);
     expect(fs.existsSync(path.join(outDir, '.nojekyll'))).toBe(true);
+    expect(fs.existsSync(path.join(outDir, 'CNAME'))).toBe(true);
+    expect(fs.existsSync(path.join(outDir, 'favicon.ico'))).toBe(true);
+    expect(fs.existsSync(path.join(outDir, 'images', 'logo-mark.png'))).toBe(true);
 
     const homeHtml = fs.readFileSync(path.join(outDir, 'index.html'), 'utf-8');
     expect(homeHtml).toContain('3D Engineering Consultancy');
-    expect(homeHtml).toContain('href="/three-d-consultancy/css/style.css"');
+    expect(homeHtml).toContain('href="/css/style.css"');
     expect(homeHtml).toContain('id="about"');
     expect(homeHtml).toContain('What We Stand For');
     expect(homeHtml).toContain('id="services"');
