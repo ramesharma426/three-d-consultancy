@@ -32,10 +32,6 @@ body {
   margin: 0 auto;
   padding: 0 1.5rem;
 }
-/* Keep prose readable at the wider container width — grids/cards/carousel
-   below aren't constrained, only the direct intro paragraphs are. */
-.page-section > .container > p { max-width: 70ch; }
-
 a { color: var(--ink); text-decoration: none; }
 a:hover { text-decoration: underline; text-underline-offset: 3px; }
 
@@ -249,8 +245,8 @@ em { font-style: italic; color: var(--navy); }
 
 /* Hero */
 .hero { padding: 4.5rem 0 4rem; }
-.hero h1 { margin-bottom: 1rem; max-width: 20ch; }
-.hero-lead { color: var(--ink-soft); max-width: 52ch; margin: 0 0 2rem; font-size: 1.05rem; }
+.hero h1 { margin-bottom: 1rem; }
+.hero-lead { color: var(--ink-soft); margin: 0 0 2rem; font-size: 1.05rem; }
 
 /* Sections */
 .page-section { padding: 3.5rem 0; scroll-margin-top: 1.5rem; }
@@ -290,13 +286,16 @@ em { font-style: italic; color: var(--navy); }
   aspect-ratio: 4 / 3;
   margin: 0;
   padding: 0;
-  background-color: var(--tint);
+  background-color: transparent;
   border: 1px solid var(--line);
   opacity: 0.45;
   transform: scale(0.88);
   transition: opacity 0.4s ease, transform 0.4s ease;
   cursor: zoom-in;
   font: inherit;
+  appearance: none;
+  -webkit-appearance: none;
+  box-shadow: none;
 }
 .carousel-card-img {
   display: block;
