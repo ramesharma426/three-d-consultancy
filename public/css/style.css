@@ -28,7 +28,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1440px;
   margin: 0 auto;
   padding: 0 1.5rem;
 }
@@ -46,6 +46,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   gap: 1.25rem;
   margin: 1rem 0;
 }
+.footer-inner .contact-badges { justify-content: center; margin: 0.75rem 0; }
 .contact-badge {
   display: inline-flex;
   align-items: center;
