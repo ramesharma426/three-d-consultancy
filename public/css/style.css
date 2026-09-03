@@ -1,12 +1,12 @@
 :root {
-  --paper: #ffffff;
-  --tint: #eef1f6;
-  --ink: #0a0a0a;
-  --ink-soft: #4a5266;
-  --stone: #7d8494;
-  --line: rgba(10, 10, 10, 0.12);
-  --navy: #1a2f52;
-  --navy-deep: #0d1b33;
+  --paper: #0d0f0c;
+  --tint: #161811;
+  --ink: #ede6d6;
+  --ink-soft: #b5af9c;
+  --stone: #8a8474;
+  --line: rgba(237, 230, 214, 0.14);
+  --navy: #1f7a46;
+  --navy-deep: #123d24;
   --sidebar: 72px;
   --sidebar-expanded: 220px;
   --topbar: 64px;
@@ -57,7 +57,7 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background: var(--paper);
+  background: var(--ink);
   border: 1px solid var(--line);
   color: var(--navy);
 }
@@ -114,7 +114,7 @@ em { font-style: italic; color: var(--navy); }
   .sidebar:hover,
   .sidebar:focus-within {
     width: var(--sidebar-expanded);
-    box-shadow: 4px 0 24px rgba(26, 47, 82, 0.12);
+    box-shadow: 4px 0 24px rgba(31, 122, 70, 0.18);
   }
   .topbar { display: none; }
 }
@@ -260,6 +260,44 @@ em { font-style: italic; color: var(--navy); }
 }
 
 .card { border-top: 1px solid var(--line); padding-top: 1.25rem; }
+
+/* Hover tilt (About value cards) */
+.tilt-card { transition: transform 0.2s ease-out; transform-style: preserve-3d; will-change: transform; }
+
+/* Magnetic pull (primary CTA) */
+.magnetic { transition: transform 0.2s ease-out; will-change: transform; }
+
+/* Hero word-stagger */
+.stagger-word {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(0.4em);
+  animation: word-in 0.5s ease forwards;
+}
+@keyframes word-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Scroll-reveal */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+[data-reveal].is-visible { opacity: 1; transform: none; }
+[data-reveal-group] > [data-reveal]:nth-child(1) { transition-delay: 0s; }
+[data-reveal-group] > [data-reveal]:nth-child(2) { transition-delay: 0.1s; }
+[data-reveal-group] > [data-reveal]:nth-child(3) { transition-delay: 0.2s; }
+[data-reveal-group] > [data-reveal]:nth-child(4) { transition-delay: 0.3s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tilt-card, .magnetic, [data-reveal], .stagger-word {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+    opacity: 1 !important;
+  }
+}
 
 /* Portfolio feature (real project with photos) */
 .portfolio-feature { margin: 1.5rem 0 2.5rem; }
@@ -447,7 +485,7 @@ body.lightbox-open { overflow: hidden; }
   .site-footer { margin-left: var(--sidebar); }
 }
 .footer-inner { padding: 2.5rem 1.5rem; text-align: center; }
-.footer-mark { width: 40px; height: auto; margin-bottom: 0.75rem; }
+.footer-mark { width: 130px; height: auto; margin-bottom: 0.75rem; }
 .footer-inner p { margin: 0.3rem 0; }
 .footer-inner a { color: var(--paper); }
 .footer-copyright { color: var(--stone); font-family: var(--font-mono); font-size: 0.75rem; margin-top: 1rem; }
